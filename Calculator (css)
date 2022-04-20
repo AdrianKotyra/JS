@@ -1,0 +1,44 @@
+
+body * {
+    font-size: 3vw;
+    
+}
+body{
+    margin-top: 10%;
+}
+#buttons {
+    display: table;
+
+    margin: auto;
+}
+#buttons *{
+    margin: 2vw;
+    padding: 1vw;
+}
+#multiply {
+    display: table;
+    margin: auto;
+    margin-top: 5vw;
+}
+#sum {
+    display: table;
+    margin: auto;
+    margin-top: 2vw;
+}
+#numbers *{
+    
+    display: inline-block;
+    padding: 2vw;
+    
+    
+   
+    
+}
+#numbers{
+    
+    display: table;
+    margin: auto;
+    
+   
+    
+}
