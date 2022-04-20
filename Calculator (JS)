@@ -1,0 +1,56 @@
+
+
+
+number1 = document.getElementById("first_number").innerText
+number2 = document.getElementById("second_number").innerText
+number1_int = parseInt(number1)
+number2_int = parseInt(number2)
+sum_display = document.getElementById("sum")
+
+
+
+
+
+function add2()
+
+{
+    
+    
+    var sum2 = number1_int + number2_int
+    
+
+    sum_display.textContent=sum2
+
+
+
+
+}
+
+function substract()
+{
+    var sub = number1_int-number2_int
+    sum_display.textContent=sub
+
+
+}
+
+function divide()
+{
+    var div = (number1_int/number2_int)
+    sum_display.textContent=div
+
+
+
+}
+function multiply()
+{
+    var multi = number1_int*number2_int
+    sum_display.textContent=multi
+
+
+
+}
+document.getElementById("add").addEventListener("click",add2)
+document.getElementById("substract").addEventListener("click",substract)
+document.getElementById("divide").addEventListener("click",divide)
+document.getElementById("multiply").addEventListener("click",multiply)
