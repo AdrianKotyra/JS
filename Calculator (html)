@@ -1,0 +1,52 @@
+<!DOCTYPE html> 
+
+<html lang="eng">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="js3.css">
+    
+
+</head>
+
+
+
+
+
+<body>
+    
+    <div id="numbers">
+        <form id="first_number">8</form>
+        <div id="second_number">2</div>
+
+    </div>
+    <div id="buttons">
+
+        <button id="add">Add</button>
+        <button id="substract">Substract</button>
+        <button id="divide">Divide</button>
+        
+
+
+    </div>
+
+    <button id="multiply">Multiply</button>
+
+    <div id="sum">Sum:</div>
+
+
+
+
+
+
+    
+    <script src="js3.js">
+        
+    </script>
+
+   
+
+</body>
+
+
+</html>
