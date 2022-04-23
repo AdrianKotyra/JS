@@ -1,0 +1,85 @@
+Body {display: table; margin: auto; margin-top: 10%; text-align: center; background-color: rgb(10, 88, 10);}
+
+
+#black_title {
+    font-size: 5vw;
+    color: goldenrod;
+    animation: text_move 7s infinite;
+}
+#black_paragraph {
+    font-size: 2vw;
+    color: white;
+    animation: fade 4s infinite
+    
+}
+#cards {
+    font-size: 2vw;
+    color: white;
+}
+#sum {
+    font-size: 2vw;
+    color: rgb(255, 255, 255);
+    
+    
+}
+#game_setup {
+    
+
+}
+#new_game_start {
+    font-size: 2vw;
+    border: 2px solid black;
+    border-radius: 10%;
+    padding: 10px;
+    display: table;
+    margin: auto;
+    background-color: goldenrod;
+    color: black;
+    cursor: pointer;
+    
+}
+
+
+#end_game {
+    font-size: 5vw;
+    color: white;
+    visibility: hidden;
+}
+#start_game {
+    background-color: goldenrod;
+    cursor: pointer;
+    display: table;
+    margin: auto;
+}
+.object_move {
+    animation: number_move 2s
+}
+
+@keyframes fade {
+    0%{opacity: 20%;}
+    50%{opacity: 100%;}
+    100%{opacity: 20%;}
+}
+@keyframes text_move {
+    0%{transform:rotateX(0deg);}
+    90%{transform:rotateX(0deg);}
+    100%{transform: rotateX(360deg);}
+}
+
+@keyframes fadein {
+    0%{font-size: 0vw;}
+    100%{font-size: 2vw;}
+}
+
+@keyframes fadeout {
+    0%{opacity: 100%;}
+    100%{opacity: 0%;}
+}
+ 
+
+
+@keyframes number_move{
+    0%{transform: translateY(-100vw);}
+    100%{opacity: translateY(0vw)}
+}
+ 
