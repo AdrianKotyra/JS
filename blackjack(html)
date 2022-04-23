@@ -1,0 +1,46 @@
+<!DOCTYPE html> 
+
+<html lang="eng">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="js4.css">
+    
+
+</head>
+
+
+
+
+
+<body>
+
+    <div id ="game_setup">
+
+    
+        <h1 id="black_title">Blackjack</h1>
+        <p id="black_paragraph">Do you want to start a new game?</p>
+        <p id="cards">Cards: 0</p>
+        <p id="sum">Sum: 0 </p>
+        <h1 id="start_game">START GAME</h1>
+
+    </div>
+    <h1 id="end_game">Congratz! You have a blackjack..<br><br><div id="new_game_start">Start again?</div></h1>
+    
+   
+
+
+
+
+
+    
+    <script src="js4.js">
+        
+    </script>
+
+   
+
+</body>
+
+
+</html>
