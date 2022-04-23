@@ -1,0 +1,93 @@
+
+
+var new_game_button = document.getElementById("start_game")
+var text_display = document.getElementById("black_paragraph")
+var cards = document.getElementById("cards")
+number_cards = 0
+sum_number = 0
+var sum = document.getElementById("sum")
+
+
+function blackjack() 
+{
+
+alert("You have a blackjack! ") }
+
+
+
+
+
+function new_game()
+{
+    text_display.style.animation="fadein 1.5s, fade 4s infinite"
+    text_display.innerHTML="Do you want to draw a new card?"
+    
+    new_game_button.innerHTML="Draw a new card"
+
+
+    
+}
+new_game_button.addEventListener("click", new_game)
+new_game_button.addEventListener("click", draw_card)
+
+
+
+
+
+function draw_card()
+{   
+    if (text_display.innerHTML="Draw a new card?")
+    { cards.innerHTML= "Cards:" + number_cards, sum.innerHTML= "Sum:" + sum_number
+    number_cards +=1
+    cards.classList.add("object_move"),
+    sum.classList.add("object_move"),
+
+    sum_number += Math.floor(Math.random() * 9) + 1 }
+    if (sum_number >=21) 
+
+    {  
+        new_game_button.style.pointerEvents="none"
+        document.getElementById("game_setup").style.animation = "fadeout 2s"
+        setTimeout(hide_menu, 2000)
+        sum.innerHTML= "Sum:" + sum_number,
+        cards.innerHTML= "Cards:" + number_cards
+        number_cards = 0
+        sum_number = 0
+        
+        
+
+        
+        
+        
+    }
+ 
+
+}
+
+function show_menu(){
+    
+    sum.innerHTML= "Sum:" + sum_number,
+    cards.innerHTML= "Cards:" + number_cards
+    new_game_button.style.pointerEvents="initial",
+    document.getElementById("game_setup").style.display="table", document.getElementById("game_setup").style.margin="auto",
+    document.getElementById("end_game").style.visibility="hidden"
+    draw_card()
+    
+
+
+}
+
+function hide_menu()
+{
+
+    document.getElementById("game_setup").style.display="none"
+    document.getElementById("game_setup").style.animation="none"
+    document.getElementById("end_game").style.visibility="visible"
+    document.getElementById("new_game_start").addEventListener("click", show_menu)
+
+}
+
+
+
+
+
