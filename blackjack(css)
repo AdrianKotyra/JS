@@ -1,4 +1,13 @@
-Body {display: table; margin: auto; margin-top: 10%; text-align: center; background-color: rgb(10, 88, 10);}
+Body {
+    display: table;
+    margin: auto; 
+    text-align: center; 
+    background-color: rgb(10, 88, 10);
+    max-height: 50vh;
+    
+}
+
+
 
 
 #black_title {
@@ -15,15 +24,52 @@ Body {display: table; margin: auto; margin-top: 10%; text-align: center; backgro
 #cards {
     font-size: 2vw;
     color: white;
+    margin-left:30vw;
+    display: none;
+    
 }
 #sum {
     font-size: 2vw;
     color: rgb(255, 255, 255);
+    font-size: 2vw;
+    color: white;
+    margin-left:30vw;
+    display: none;
+    
+}
+
+
+#cards_pc {
+    font-size: 2vw;
+    color: white;
+    margin-right:30vw;
+    display: none;
+    
+}
+#sum_pc {
+    font-size: 2vw;
+    color: rgb(255, 255, 255);
+    font-size: 2vw;
+    color: white;
+    margin-right:30vw;
+    display: none;
     
     
 }
-#game_setup {
-    
+#pass {
+    font-weight: 800;
+    font-size: 2vw;
+    border: 2px solid black;
+    border-radius: 10%;
+    padding: 5px;
+    display: table;
+    margin: auto;
+    margin-top: 1vw;
+    background-color: goldenrod;
+    color: black;
+    cursor: pointer;
+    width: 3vw;
+    display: none;
 
 }
 #new_game_start {
@@ -38,23 +84,108 @@ Body {display: table; margin: auto; margin-top: 10%; text-align: center; backgro
     cursor: pointer;
     
 }
+#new_game_start2 {
+    font-size: 2vw;
+    border: 2px solid black;
+    border-radius: 10%;
+    padding: 10px;
+    display: table;
+    margin: auto;
+    background-color: goldenrod;
+    color: black;
+    cursor: pointer;
+    
+}
 
+#cards_all_player * {
+    width: 15vw;
+    height: 15vw;
+    position: absolute;
+    top: 25%;
+    right: 43%;
+    visibility: hidden;
+   
 
+}
+#cards_all_pc * {
+    width: 15vw;
+    height: 15vw;
+    position: absolute;
+    top: 25%;
+    right: 43%;
+    visibility: hidden;
+}
+#cards_space * {
+    display: table;
+    margin-left: 50%;
+    width: 15vw;
+    height: 15vw;
+    position: absolute;
+    
+    
+}
 #end_game {
     font-size: 5vw;
     color: white;
     visibility: hidden;
+    position: absolute;
+    width: 70%;
+    top: 30%;
+    left: 15%;
+    display: table;
+    margin: auto;
+
+
+    
+}
+
+#end_game_pc {
+    font-size: 5vw;
+    color: white;
+    visibility: hidden;
+    position: absolute;
+    width: 70%;
+    top: 30%;
+    left: 15%;
+    display: table;
+    margin: auto;
+
+
+    
 }
 #start_game {
     background-color: goldenrod;
     cursor: pointer;
     display: table;
     margin: auto;
+    
 }
 .object_move {
     animation: number_move 2s
 }
+#player {
+    
+    animation: players_move2 2s;
+    color: white;
+    font-size: 3vw;
+    display: none;
+    width: 12vw;
+    
+    
+    
+}
 
+#pc {
+    animation: players_move 2s;
+    color: white;
+    font-size: 3vw;
+    display: none;
+    
+    
+    
+    
+
+}
 @keyframes fade {
     0%{opacity: 20%;}
     50%{opacity: 100%;}
@@ -80,6 +211,26 @@ Body {display: table; margin: auto; margin-top: 10%; text-align: center; backgro
 
 @keyframes number_move{
     0%{transform: translateY(-100vw);}
-    100%{opacity: translateY(0vw)}
+    100%{transform: translateY(0vw)}
+}
+@keyframes players_move{
+    0%{transform: translatex(-100vw);}
+    100%{transform: translatex(0vw)}
+}
+@keyframes players_move2{
+    0%{transform: translatex(100vw);}
+    100%{transform: translatex(0vw)}
 }
  
+@keyframes card_move{
+    0%{transform: translatex(0vw);}
+    100%{transform:translate(40vw, 10vw)}
+    
+    
+}
+@keyframes card_move_pc{
+    0%{transform: translatex(0vw);}
+    100%{transform:translate(-40vw, 0vw)}
+    
+    
+}
