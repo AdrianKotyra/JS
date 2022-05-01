@@ -15,29 +15,68 @@
 
 <body>
 
-    <div id ="game_setup">
-
-    
-        <h1 id="black_title">Blackjack</h1>
-        <p id="black_paragraph">Do you want to start a new game?</p>
-        <p id="cards">Cards: 0</p>
-        <p id="sum">Sum: 0 </p>
-        <h1 id="start_game">START GAME</h1>
-
-    </div>
-    <h1 id="end_game">Congratz! You have a blackjack..<br><br><div id="new_game_start">Start again?</div></h1>
-    
-   
-
-
-
-
-
-    
-    <script src="js4.js">
+    <div id ="wrapper">
         
-    </script>
+        <div id ="cards_all_pc">
+                
+            <img id ="card_2_pc" src= "img_cards\2.png"><img id ="card_2_copy_pc" src= "img_cards\2.png"><img id ="card_2_copy_pc2" src= "img_cards\2.png"><img id ="card_2_copy_pc3" src= "img_cards\2.png">
+            <img id = "card_3_pc" src= "img_cards\3.png"><img id = "card_3_copy_pc" src= "img_cards\3.png"><img id = "card_3_copy_pc2" src= "img_cards\3.png"><img id = "card_3_copy_pc3" src= "img_cards\3.png">
+            <img id ="card_4_pc" src= "img_cards\4.png"><img id ="card_4_copy_pc" src= "img_cards\4.png"><img id ="card_4_copy_pc2" src= "img_cards\4.png"><img id ="card_4_copy_pc3" src= "img_cards\4.png">
+            <img id ="card_5_pc" src= "img_cards\5.png"><img id ="card_5_copy_pc" src= "img_cards\5.png"><img id ="card_5_copy_pc2" src= "img_cards\5.png"><img id ="card_5_copy_pc3" src= "img_cards\5.png">
+            <img id ="card_6_pc" src= "img_cards\6.png"><img id ="card_6_copy_pc" src= "img_cards\6.png"><img id ="card_6_copy2_pc" src= "img_cards\6.png"><img id ="card_6_copy3_pc" src= "img_cards\6.png">
+            <img id ="card_7_pc" src= "img_cards\7.png"><img id ="card_7_copy_pc" src= "img_cards\7.png"><img id ="card_7_copy2_pc" src= "img_cards\7.png"><img id ="card_7_copy3_pc" src= "img_cards\7.png">
+            <img id ="card_8_pc" src= "img_cards\8.png"><img id ="card_8_copy_pc" src= "img_cards\8.png"><img id ="card_8_copy2_pc" src= "img_cards\8.png"><img id ="card_8_copy3_pc" src= "img_cards\8.png">
+            <img id ="card_9_pc" src= "img_cards\9.png"><img id ="card_9_copy_pc" src= "img_cards\9.png"><img id ="card_9_copy_pc2" src= "img_cards\9.png"><img id ="card_9_copy3_pc" src= "img_cards\9.png">
+            <img id ="card_10_pc" src= "img_cards\10.png"><img id ="card_10_copy_pc" src= "img_cards\10.png"><img id ="card_10_copy2_pc" src= "img_cards\10.png"><img id ="card_10_copy3_pc" src= "img_cards\10.png">
+            
 
+
+        </div>
+    
+        <div id ="cards_all_player">
+                
+            <img id ="card_2" src= "img_cards\2.png"><img id ="card_2_copy" src= "img_cards\2.png"><img id ="card_2_copy2" src= "img_cards\2.png"><img id ="card_2_copy3" src= "img_cards\2.png">
+            <img id = "card_3" src= "img_cards\3.png"><img id = "card_3_copy" src= "img_cards\3.png"><img id = "card_3_copy2" src= "img_cards\3.png"><img id = "card_3_copy3" src= "img_cards\3.png">
+            <img id ="card_4" src= "img_cards\4.png"><img id ="card_4_copy" src= "img_cards\4.png"><img id ="card_4_copy2" src= "img_cards\4.png"><img id ="card_4_copy3" src= "img_cards\4.png">
+            <img id ="card_5" src= "img_cards\5.png"><img id ="card_5_copy" src= "img_cards\5.png"><img id ="card_5_copy2" src= "img_cards\5.png"><img id ="card_5_copy3" src= "img_cards\5.png">
+            <img id ="card_6" src= "img_cards\6.png"><img id ="card_6_copy" src= "img_cards\6.png"><img id ="card_6_copy2" src= "img_cards\6.png"><img id ="card_6_copy3" src= "img_cards\6.png">
+            <img id ="card_7" src= "img_cards\7.png"><img id ="card_7_copy" src= "img_cards\7.png"><img id ="card_7_copy2" src= "img_cards\7.png"><img id ="card_7_copy3" src= "img_cards\7.png">
+            <img id ="card_8" src= "img_cards\8.png"><img id ="card_8_copy" src= "img_cards\8.png"><img id ="card_8_copy2" src= "img_cards\8.png"><img id ="card_8_copy3" src= "img_cards\8.png">
+            <img id ="card_9" src= "img_cards\9.png"><img id ="card_9_copy" src= "img_cards\9.png"><img id ="card_9_copy2" src= "img_cards\9.png"><img id ="card_9_copy3" src= "img_cards\9.png">
+            <img id ="card_10" src= "img_cards\10.png"><img id ="card_10_copy" src= "img_cards\10.png"><img id ="card_10_copy2" src= "img_cards\10.png"><img id ="card_10_copy3" src= "img_cards\10.png">
+            
+
+
+        </div>
+
+        <div id ="game_setup">
+            
+            <div id="pc">Computer</div> 
+            <p id="cards_pc">Cards: 0</p><p id="sum_pc">Sum: 0  </p>
+            <h1 id="black_title">Blackjack</h1>
+            <p id="black_paragraph">Do you want to start a new game?</p>
+            
+            
+            <h1 id="start_game">START GAME</h1>
+
+            <p id="pass">Pass</p>
+            <p id="cards">Cards: 0</p><p id="sum">Sum: 0  </p>
+            <div id="player"> Player</div>
+            
+
+        </div>
+        <h1 id="end_game">Congratz! <br>You have a blackjack..<br><br><div id="new_game_start">Start again?</div></h1>
+        <h1 id="end_game_pc">You lost ! <br>Computer has a blackjack..<br><br><div id="new_game_start2">Start again?</div></h1>
+        
+        
+    
+
+
+        
+        <script src="js4.js">
+            
+        </script>
+    </div>
    
 
 </body>
