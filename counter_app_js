@@ -1,0 +1,41 @@
+
+
+var count = document.getElementById("count-el").ariaValueMax
+
+
+var increment_btn = document.getElementById("increment_btn")
+
+
+function increment()
+{
+    count+=1
+    
+    document.getElementById("count-el").textContent=count
+
+    
+    
+   
+
+}
+
+increment_btn.addEventListener("click", increment)
+
+
+document.getElementById("entries")
+
+var save_now = document.getElementById("save_btn")
+
+function save()
+
+{
+
+    var x = count +"-"
+    count = 0
+    document.getElementById("count-el").textContent=count
+    
+
+    
+    document.getElementById("entries").innerText+=x
+
+}
+save_now.addEventListener("click", save)
