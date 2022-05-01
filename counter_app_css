@@ -1,0 +1,52 @@
+h1 {
+    display: table;
+    font-size: 5vw;
+    margin: auto;
+}
+#count-el{
+    display: table;
+    font-size: 5vw;
+    margin: auto;
+}
+#increment_btn{
+    display: table;
+    font-size: 2vw;
+    margin: auto;
+    background-color: brown;
+    border: 2px solid black;
+    color: aliceblue;
+    cursor: pointer;
+
+}
+#save_btn {
+    display: table;
+    font-size: 1.5vw;
+    margin: auto;
+    margin-top: 1vw;
+    background-color: green;
+    border: 2px solid black;
+    color: aliceblue;
+    cursor: pointer;
+    
+
+}
+#entries {
+    display: table;
+    font-size: 1.5vw;
+    margin: left;
+    margin-top: 1vw;
+    background-color: rgb(187, 33, 110);
+    
+    color: aliceblue;
+    cursor: pointer;
+
+
+}
+
+#application {
+    margin-top: 10%;
+    border: 5px solid black;
+    margin-left: 25%;
+    margin-right: 25%;
+    background-color: azure;
+}
