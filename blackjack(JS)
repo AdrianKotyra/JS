@@ -3,9 +3,42 @@
 var new_game_button = document.getElementById("start_game")
 var text_display = document.getElementById("black_paragraph")
 var cards = document.getElementById("cards")
+var pass_button = document.getElementById("pass")
+
 number_cards = 0
 sum_number = 0
+
+number_cards_pc = 0
+sum_number_pc = 0
+
 var sum = document.getElementById("sum")
+margin_value = 0
+margin_value2 = 0
+z_index = 0
+
+
+
+num_2 = 0
+num_3 = 0
+num_4 = 0
+num_5 = 0
+num_6 = 0
+num_7 = 0
+num_8 = 0
+num_9 = 0
+num_10 = 0
+
+num_2_pc = 0
+num_3_pc = 0
+num_4_pc = 0
+num_5_pc = 0
+num_6_pc = 0
+num_7_pc = 0
+num_8_pc = 0
+num_9_pc = 0
+num_10_pc = 0
+
+
 
 
 function blackjack() 
@@ -25,25 +58,100 @@ function new_game()
     new_game_button.innerHTML="Draw a new card"
 
 
+    if (text_display.innerHTML="Draw a new card") 
+    {
+        document.getElementById("pass").style.display="table"
+        document.getElementById("pass")
+
+
+    }
+
+    if (text_display.innerHTML="Do you want to draw a new card?") {
+        new_game_button.addEventListener("click", draw_card)
+        pass_button.addEventListener("click", draw_card2)
+
+        
+    }
+   
+   
+
+
     
 }
+
 new_game_button.addEventListener("click", new_game)
-new_game_button.addEventListener("click", draw_card)
 
 
-
-
+//Draw_card_button function//--------------------------------------------------------------
 
 function draw_card()
-{   
-    if (text_display.innerHTML="Draw a new card?")
-    { cards.innerHTML= "Cards:" + number_cards, sum.innerHTML= "Sum:" + sum_number
-    number_cards +=1
-    cards.classList.add("object_move"),
-    sum.classList.add("object_move"),
 
-    sum_number += Math.floor(Math.random() * 9) + 1 }
-    if (sum_number >=21) 
+{   
+    random_number = Math.floor(Math.random() * 9) + 2
+    random_number2 = Math.floor(Math.random() * 9) +2
+    sum_number+=random_number,
+    sum_number_pc+=random_number2,
+
+    x=0
+
+
+    number_cards +=1
+    number_cards_pc +=1
+    margin_value +=2.5
+    margin_value2 -=2.5
+    z_index +=1
+    random_number_pc = 49
+    
+    
+    if (sum_number_pc-random_number2 >=21) {
+        sum_number_pc-=random_number2
+        random_number_pc = 51
+        number_cards_pc -=1
+        alert("computer_pass")
+
+        
+    }
+    if (sum_number_pc-random_number2 >=17) {
+        if (Math.floor(Math.random() *51) +50 > 75 ) {
+
+        
+
+        sum_number_pc-=random_number2
+        random_number_pc = 51
+        number_cards_pc -=1
+        alert("computer_pass")
+        }
+        
+    }
+    
+
+
+    
+
+    if (text_display.innerHTML="Draw a new card?")
+    { cards.innerHTML= "Cards:" + number_cards, sum.innerHTML= "Sum:" + sum_number, cards_pc.innerHTML= "Cards:" + number_cards_pc, sum_pc.innerHTML= "Sum:" + sum_number_pc}
+    
+    document.getElementById("player").style.display="inline-block"
+    document.getElementById("pc").style.display="inline-block"
+
+    cards.classList.add("object_move")
+    cards.style.display="table"
+    sum.classList.add("object_move")
+    sum.style.display="table"
+
+
+
+    cards_pc.classList.add("object_move")
+    cards_pc.style.display="table"
+
+    sum_pc.classList.add("object_move")
+    sum_pc.style.display="table"
+        
+       
+
+
+    
+    if (sum_number >=21 )  
 
     {  
         new_game_button.style.pointerEvents="none"
@@ -51,41 +159,1126 @@ function draw_card()
         setTimeout(hide_menu, 2000)
         sum.innerHTML= "Sum:" + sum_number,
         cards.innerHTML= "Cards:" + number_cards
-        number_cards = 0
-        sum_number = 0
-        
+
+        sum_pc.innerHTML= "Sum:" + sum_number_pc
+        cards_pc.innerHTML= "Cards:" + number_cards_pc
+
         
 
         
         
         
     }
- 
+    if (sum_number_pc >=21)  
 
+    {  
+        new_game_button.style.pointerEvents="none"
+        document.getElementById("game_setup").style.animation = "fadeout 2s"
+        setTimeout(hide_menu, 2000)
+
+        sum.innerHTML= "Sum:" + sum_number,
+        cards.innerHTML= "Cards:" + number_cards
+
+        sum_pc.innerHTML= "Sum:" + sum_number_pc
+        cards_pc.innerHTML= "Cards:" + number_cards_pc
+
+         
+        
+        
+        
+    }
+
+   
+
+    
+    
+    if (sum_number >=21)  
+
+    {  
+        new_game_button.style.pointerEvents="none"
+        document.getElementById("game_setup").style.animation = "fadeout 2s"
+        setTimeout(hide_menu, 2000)
+        sum.innerHTML= "Sum:" + sum_number,
+        cards.innerHTML= "Cards:" + number_cards
+
+        sum_pc.innerHTML= "Sum:" + sum_number_pc
+        cards_pc.innerHTML= "Cards:" + number_cards_pc
+
+        
+        
+        
+        
+        
+        
+    }
+    else if (sum_number_pc >=21)  
+
+    {  
+        new_game_button.style.pointerEvents="none"
+        document.getElementById("game_setup").style.animation = "fadeout 2s"
+        setTimeout(hide_menu, 2000)
+
+        sum.innerHTML= "Sum:" + sum_number,
+        cards.innerHTML= "Cards:" + number_cards
+
+        sum_pc.innerHTML= "Sum:" + sum_number_pc
+        cards_pc.innerHTML= "Cards:" + number_cards_pc
+
+       
+        
+        
+        
+    }
+    
+    
+   
+    num_2_logic()
+    num_2_logic_pc()
+    
+
+    num_3_logic()
+    num_3_logic_pc()
+
+    num_4_logic()
+    num_4_logic_pc()
+
+
+    num_5_logic()
+    num_5_logic_pc()
+
+    num_6_logic()
+    num_6_logic_pc()
+
+    num_7_logic()
+    num_7_logic_pc()
+
+    num_8_logic()
+    num_8_logic_pc()
+
+    num_9_logic()
+    num_9_logic_pc()
+
+
+
+    num_10_logic()
+    num_10_logic_pc()
+
+    new_game()
+   
 }
+
+
+//pass_card_button function//--------------------------------------------------------------
+
+function draw_card2()
+
+{   
+    random_number = Math.floor(Math.random() * 9) + 2
+    random_number2 = Math.floor(Math.random() * 9) + 2
+    sum_number+=random_number-random_number
+    sum_number_pc+=random_number2,
+    random_number_pc = 49
+    
+    
+    if (sum_number_pc-random_number2 >=21) {
+        sum_number_pc-=random_number2
+        random_number_pc = 51
+        number_cards_pc -=1
+        alert("computer_pass")
+
+        
+    }
+    if (sum_number_pc-random_number2 >=17) {
+        if (Math.floor(Math.random() *51) +50 > 75 ) {
+
+        
+
+        sum_number_pc-=random_number2
+        random_number_pc = 51
+        number_cards_pc -=1
+        alert("computer_pass")
+        }
+        
+    }
+
+
+   
+
+    number_cards +=1 -1
+    number_cards_pc +=1
+    margin_value +=2.5
+    margin_value2 -=2.5
+    z_index +=1
+    
+
+    if (text_display.innerHTML="Draw a new card?")
+    { cards.innerHTML= "Cards:" + number_cards, sum.innerHTML= "Sum:" + sum_number, cards_pc.innerHTML= "Cards:" + number_cards_pc, sum_pc.innerHTML= "Sum:" + sum_number_pc}
+    
+    document.getElementById("player").style.display="inline-block"
+    document.getElementById("pc").style.display="inline-block"
+
+    cards.classList.add("object_move")
+    cards.style.display="table"
+    sum.classList.add("object_move")
+    sum.style.display="table"
+
+
+
+    cards_pc.classList.add("object_move")
+    cards_pc.style.display="table"
+
+    sum_pc.classList.add("object_move")
+    sum_pc.style.display="table"
+
+    if (sum_number_pc-random_number2 >=21) {
+        sum_number_pc-=random_number2
+        random_number_pc = 51
+        number_cards_pc -=1
+        alert("computer_pass")
+
+        
+    }
+    
+    if (sum_number_pc-random_number2 >=17) {
+        if (Math.floor(Math.random() *51) +50 > 75 ) {
+
+        
+
+        sum_number_pc-=random_number2
+        random_number_pc = 51
+        number_cards_pc -=1
+        alert("computer_pass")
+        }
+        
+    }
+    
+
+  
+    
+    if (sum_number >=21)  
+
+    {  
+        new_game_button.style.pointerEvents="none"
+        document.getElementById("game_setup").style.animation = "fadeout 2s"
+        setTimeout(hide_menu, 2000)
+        sum.innerHTML= "Sum:" + sum_number,
+        cards.innerHTML= "Cards:" + number_cards
+
+        sum_pc.innerHTML= "Sum:" + sum_number_pc
+        cards_pc.innerHTML= "Cards:" + number_cards_pc
+
+        
+        
+        
+        
+    }
+    else if (sum_number_pc >=21)  
+
+    {  
+        new_game_button.style.pointerEvents="none"
+        document.getElementById("game_setup").style.animation = "fadeout 2s"
+        setTimeout(hide_menu, 2000)
+
+        sum.innerHTML= "Sum:" + sum_number,
+        cards.innerHTML= "Cards:" + number_cards
+
+        sum_pc.innerHTML= "Sum:" + sum_number_pc
+        cards_pc.innerHTML= "Cards:" + number_cards_pc
+
+         
+        
+        
+        
+    }
+    
+   
+    
+    num_2_logic_pc()
+    
+
+    
+    num_3_logic_pc()
+
+    
+    num_4_logic_pc()
+
+
+    
+    num_5_logic_pc()
+
+    
+    num_6_logic_pc()
+
+    
+    num_7_logic_pc()
+
+    
+    num_8_logic_pc()
+
+    
+    num_9_logic_pc()
+
+
+
+    
+    num_10_logic_pc()
+
+    new_game()
+   
+}
+
+
+
+
+
+
 
 function show_menu(){
     
-    sum.innerHTML= "Sum:" + sum_number,
-    cards.innerHTML= "Cards:" + number_cards
-    new_game_button.style.pointerEvents="initial",
-    document.getElementById("game_setup").style.display="table", document.getElementById("game_setup").style.margin="auto",
-    document.getElementById("end_game").style.visibility="hidden"
-    draw_card()
+    window.location.reload();
     
-
 
 }
 
 function hide_menu()
 {
+    if (Math.abs(21 - sum_number_pc) > Math.abs(21 - sum_number))  {
+        document.getElementById("game_setup").style.display="none"
+        document.getElementById("game_setup").style.animation="none"
+        document.getElementById("end_game").style.visibility="visible"
+        document.getElementById("new_game_start").addEventListener("click", show_menu)
 
-    document.getElementById("game_setup").style.display="none"
-    document.getElementById("game_setup").style.animation="none"
-    document.getElementById("end_game").style.visibility="visible"
-    document.getElementById("new_game_start").addEventListener("click", show_menu)
+        
+    }             
+    
+    else if (Math.abs(21 - sum_number_pc) < Math.abs(21 - sum_number)) {
+        document.getElementById("game_setup").style.display="none"
+        document.getElementById("game_setup").style.animation="none"
+        document.getElementById("end_game_pc").style.visibility="visible"
+        document.getElementById("new_game_start2").addEventListener("click", show_menu)
+
+    }
+
+    
+  
+
+    
+        
+    
 
 }
+
+
+
+
+
+//LOGIC_NUMBER player//
+//*******************************************************************/
+
+
+function num_2_logic() {
+    
+    
+    if (random_number==2 && num_2 ==3) {
+        document.getElementById("card_2_copy3").style.visibility="visible"
+        document.getElementById("card_2_copy3").style.animation="card_move 2s forwards"
+        document.getElementById("card_2_copy3").style.margin=margin_value +"%"
+        document.getElementById("card_2_copy3").style.zIndex = z_index
+        num_2 +=1
+        
+        
+       
+    }
+    else if (random_number==2 && num_2 ==2) {
+        document.getElementById("card_2_copy2").style.visibility="visible"
+        document.getElementById("card_2_copy2").style.animation="card_move 2s forwards"
+        document.getElementById("card_2_copy2").style.margin=margin_value +"%"
+        document.getElementById("card_2_copy2").style.zIndex = z_index
+        num_2 +=1
+        
+
+       
+    }
+    else if (random_number==2 && num_2 ==1) {
+        document.getElementById("card_2_copy").style.visibility="visible"
+        document.getElementById("card_2_copy").style.animation="card_move 2s forwards"
+        document.getElementById("card_2_copy").style.margin=margin_value +"%"
+        document.getElementById("card_2_copy").style.zIndex = z_index
+        num_2 +=1
+        }
+       
+    else if (random_number==2) {
+        document.getElementById("card_2").style.visibility="visible"
+        document.getElementById("card_2").style.animation="card_move 2s forwards"
+        document.getElementById("card_2").style.margin=margin_value +"%"
+        document.getElementById("card_2").style.zIndex = z_index
+        num_2 +=1
+
+        
+    }
+
+    
+        
+
+       
+
+
+}
+function num_3_logic() 
+{
+    if (random_number==3 && num_3 ==3) {
+        document.getElementById("card_3_copy3").style.visibility="visible"
+        document.getElementById("card_3_copy3").style.animation="card_move 2s forwards"
+        document.getElementById("card_3_copy3").style.margin=margin_value +"%"
+        document.getElementById("card_3_copy3").style.zIndex = z_index
+        num_3 +=1
+
+       
+    }
+    else if (random_number==3 && num_3 ==2) {
+        document.getElementById("card_3_copy2").style.visibility="visible"
+        document.getElementById("card_3_copy2").style.animation="card_move 2s forwards"
+        document.getElementById("card_3_copy2").style.margin=margin_value +"%"
+        document.getElementById("card_3_copy2").style.zIndex = z_index
+        num_3 +=1
+
+       
+    }
+    else if (random_number==3 && num_3 ==1) {
+        document.getElementById("card_3_copy").style.visibility="visible"
+        document.getElementById("card_3_copy").style.animation="card_move 2s forwards"
+        document.getElementById("card_3_copy").style.margin=margin_value +"%"
+        document.getElementById("card_3_copy").style.zIndex = z_index
+        num_3 +=1
+        }
+       
+    else if (random_number==3) {
+        document.getElementById("card_3").style.visibility="visible"
+        document.getElementById("card_3").style.animation="card_move 2s forwards"
+        document.getElementById("card_3").style.margin=margin_value +"%"
+        document.getElementById("card_3").style.zIndex = z_index
+        num_3 +=1
+
+        
+    }
+    
+    
+       
+}
+function num_4_logic() 
+{
+    if (random_number==4 && num_4 ==3) {
+        document.getElementById("card_4_copy3").style.visibility="visible"
+        document.getElementById("card_4_copy3").style.animation="card_move 2s forwards"
+        document.getElementById("card_4_copy3").style.margin=margin_value +"%"
+        document.getElementById("card_4_copy3").style.zIndex = z_index
+        num_4 +=1
+
+       
+    }
+    else if (random_number==4 && num_4 ==2) {
+        document.getElementById("card_4_copy2").style.visibility="visible"
+        document.getElementById("card_4_copy2").style.animation="card_move 2s forwards"
+        document.getElementById("card_4_copy2").style.margin=margin_value +"%"
+        document.getElementById("card_4_copy2").style.zIndex = z_index
+        num_4 +=1
+
+       
+    }
+    else if (random_number==4 && num_4 ==1) {
+        document.getElementById("card_4_copy").style.visibility="visible"
+        document.getElementById("card_4_copy").style.animation="card_move 2s forwards"
+        document.getElementById("card_4_copy").style.margin=margin_value +"%"
+        document.getElementById("card_4_copy").style.zIndex = z_index
+        num_4 +=1
+        }
+       
+    else if (random_number==4 ) {
+        document.getElementById("card_4").style.visibility="visible"
+        document.getElementById("card_4").style.animation="card_move 2s forwards"
+        document.getElementById("card_4").style.margin=margin_value +"%"
+        document.getElementById("card_4").style.zIndex = z_index
+        num_4 +=1
+
+        
+    }
+     
+    
+       
+}
+
+function num_5_logic() 
+{
+    if (random_number==5 && num_5 ==3) {
+        document.getElementById("card_5_copy3").style.visibility="visible"
+        document.getElementById("card_5_copy3").style.animation="card_move 2s forwards"
+        document.getElementById("card_5_copy3").style.margin=margin_value +"%"
+        document.getElementById("card_5_copy3").style.zIndex = z_index
+        num_5 +=1
+
+       
+    }
+    else if (random_number==5 && num_5 ==2) {
+        document.getElementById("card_5_copy2").style.visibility="visible"
+        document.getElementById("card_5_copy2").style.animation="card_move 2s forwards"
+        document.getElementById("card_5_copy2").style.margin=margin_value +"%"
+        document.getElementById("card_5_copy2").style.zIndex = z_index
+        num_5 +=1
+
+       
+    }
+    else if (random_number==5 && num_5 ==1) {
+        document.getElementById("card_5_copy").style.visibility="visible"
+        document.getElementById("card_5_copy").style.animation="card_move 2s forwards"
+        document.getElementById("card_5_copy").style.margin=margin_value +"%"
+        document.getElementById("card_5_copy").style.zIndex = z_index
+        num_5 +=1
+        }
+       
+    else if (random_number==5) {
+        document.getElementById("card_5").style.visibility="visible"
+        document.getElementById("card_5").style.animation="card_move 2s forwards"
+        document.getElementById("card_5").style.margin=margin_value +"%"
+        document.getElementById("card_5").style.zIndex = z_index
+        num_5 +=1
+
+        
+    }
+    
+    
+       
+}
+
+function num_6_logic() 
+{
+    if (random_number==6 && num_6 ==3) {
+        document.getElementById("card_6_copy3").style.visibility="visible"
+        document.getElementById("card_6_copy3").style.animation="card_move 2s forwards"
+        document.getElementById("card_6_copy3").style.margin=margin_value +"%"
+        document.getElementById("card_6_copy3").style.zIndex = z_index
+        num_6 +=1
+
+       
+    }
+    else if (random_number==6 && num_6 ==2) {
+        document.getElementById("card_6_copy2").style.visibility="visible"
+        document.getElementById("card_6_copy2").style.animation="card_move 2s forwards"
+        document.getElementById("card_6_copy2").style.margin=margin_value +"%"
+        document.getElementById("card_6_copy2").style.zIndex = z_index
+        num_6 +=1
+
+       
+    }
+    else if (random_number==6 && num_6 ==1) {
+        document.getElementById("card_6_copy").style.visibility="visible"
+        document.getElementById("card_6_copy").style.animation="card_move 2s forwards"
+        document.getElementById("card_6_copy").style.margin=margin_value +"%"
+        document.getElementById("card_6_copy").style.zIndex = z_index
+        num_6 +=1
+        }
+       
+    else if (random_number==6) {
+        document.getElementById("card_6").style.visibility="visible"
+        document.getElementById("card_6").style.animation="card_move 2s forwards"
+        document.getElementById("card_6").style.margin=margin_value +"%"
+        document.getElementById("card_6").style.zIndex = z_index
+        num_6 +=1
+
+        
+    }
+    
+       
+}
+function num_7_logic() 
+{
+    if (random_number==7 && num_7 ==3) {
+        document.getElementById("card_7_copy3").style.visibility="visible"
+        document.getElementById("card_7_copy3").style.animation="card_move 2s forwards"
+        document.getElementById("card_7_copy3").style.margin=margin_value +"%"
+        document.getElementById("card_7_copy3").style.zIndex = z_index
+        num_7 +=1
+
+       
+    }
+    else if (random_number==7 && num_7 ==2) {
+        document.getElementById("card_7_copy2").style.visibility="visible"
+        document.getElementById("card_7_copy2").style.animation="card_move 2s forwards"
+        document.getElementById("card_7_copy2").style.margin=margin_value +"%"
+        document.getElementById("card_7_copy2").style.zIndex = z_index
+        num_7 +=1
+
+       
+    }
+    else if (random_number==7 && num_7 ==1) {
+        document.getElementById("card_7_copy").style.visibility="visible"
+        document.getElementById("card_7_copy").style.animation="card_move 2s forwards"
+        document.getElementById("card_7_copy").style.margin=margin_value +"%"
+        document.getElementById("card_7_copy").style.zIndex = z_index
+        num_7 +=1
+        }
+       
+    else if (random_number==7) {
+        document.getElementById("card_7").style.visibility="visible"
+        document.getElementById("card_7").style.animation="card_move 2s forwards"
+        document.getElementById("card_7").style.margin=margin_value +"%"
+        document.getElementById("card_7").style.zIndex = z_index
+        num_7 +=1
+
+        
+    }
+    
+       
+}
+
+function num_8_logic() 
+{
+    if (random_number==8 && num_8 ==3) {
+        document.getElementById("card_8_copy3").style.visibility="visible"
+        document.getElementById("card_8_copy3").style.animation="card_move 2s forwards"
+        document.getElementById("card_8_copy3").style.margin=margin_value +"%"
+        document.getElementById("card_8_copy3").style.zIndex = z_index
+        num_8 +=1
+
+       
+    }
+    else if (random_number==8 && num_8 ==2) {
+        document.getElementById("card_8_copy2").style.visibility="visible"
+        document.getElementById("card_8_copy2").style.animation="card_move 2s forwards"
+        document.getElementById("card_8_copy2").style.margin=margin_value +"%"
+        document.getElementById("card_8_copy2").style.zIndex = z_index
+        num_8 +=1
+
+       
+    }
+    else if (random_number==8 && num_8 ==1) {
+        document.getElementById("card_8_copy").style.visibility="visible"
+        document.getElementById("card_8_copy").style.animation="card_move 2s forwards"
+        document.getElementById("card_8_copy").style.margin=margin_value +"%"
+        document.getElementById("card_8_copy").style.zIndex = z_index
+        num_8 +=1
+        }
+       
+    else if (random_number==8) {
+        document.getElementById("card_8").style.visibility="visible"
+        document.getElementById("card_8").style.animation="card_move 2s forwards"
+        document.getElementById("card_8").style.margin=margin_value +"%"
+        document.getElementById("card_8").style.zIndex = z_index
+        num_8 +=1
+
+        
+    }
+    
+       
+}
+function num_9_logic() 
+{
+    if (random_number==9 && num_9 ==3) {
+        document.getElementById("card_9_copy3").style.visibility="visible"
+        document.getElementById("card_9_copy3").style.animation="card_move 2s forwards"
+        document.getElementById("card_9_copy3").style.margin=margin_value +"%"
+        document.getElementById("card_9_copy3").style.zIndex = z_index
+        num_9 +=1
+
+       
+    }
+    else if (random_number==9 && num_9 ==2) {
+        document.getElementById("card_9_copy2").style.visibility="visible"
+        document.getElementById("card_9_copy2").style.animation="card_move 2s forwards"
+        document.getElementById("card_9_copy2").style.margin=margin_value +"%"
+        document.getElementById("card_9_copy2").style.zIndex = z_index
+        num_9 +=1
+
+       
+    }
+    else if (random_number==9 && num_9 ==1) {
+        document.getElementById("card_9_copy").style.visibility="visible"
+        document.getElementById("card_9_copy").style.animation="card_move 2s forwards"
+        document.getElementById("card_9_copy").style.margin=margin_value +"%"
+        document.getElementById("card_9_copy").style.zIndex = z_index
+        num_9 +=1
+        }
+       
+    else if (random_number==9) {
+        document.getElementById("card_9").style.visibility="visible"
+        document.getElementById("card_9").style.animation="card_move 2s forwards"
+        document.getElementById("card_9").style.margin=margin_value +"%"
+        document.getElementById("card_9").style.zIndex = z_index
+        num_9 +=1
+
+        
+    }
+    
+       
+}
+
+function num_10_logic() 
+{
+    if (random_number==10 && num_10 ==3) {
+        document.getElementById("card_10_copy3").style.visibility="visible"
+        document.getElementById("card_10_copy3").style.animation="card_move 2s forwards"
+        document.getElementById("card_10_copy3").style.margin=margin_value +"%"
+        document.getElementById("card_10_copy3").style.zIndex = z_index
+        num_10 +=1
+
+
+
+       
+    }
+    else if (random_number==10 && num_10 ==2) {
+        document.getElementById("card_10_copy2").style.visibility="visible"
+        document.getElementById("card_10_copy2").style.animation="card_move 2s forwards"
+        document.getElementById("card_10_copy2").style.margin=margin_value +"%"
+        document.getElementById("card_10_copy2").style.zIndex = z_index
+        num_10 +=1
+
+       
+    }
+    else if (random_number==10 && num_10 ==1) {
+        document.getElementById("card_10_copy").style.visibility="visible"
+        document.getElementById("card_10_copy").style.animation="card_move 2s forwards"
+        document.getElementById("card_10_copy").style.margin=margin_value +"%"
+        document.getElementById("card_10_copy").style.zIndex = z_index
+        num_10 +=1
+        }
+       
+    else if (random_number==10) {
+        document.getElementById("card_10").style.visibility="visible"
+        document.getElementById("card_10").style.animation="card_move 2s forwards"
+        document.getElementById("card_10").style.margin=margin_value +"%"
+        document.getElementById("card_10").style.zIndex = z_index
+        num_10 +=1
+
+        
+    }
+    
+       
+}
+
+//*logic_pc-----------------------------------------------------------------------------------------------------------------------------------
+
+function num_2_logic_pc() {
+
+    
+
+    if (random_number2==2 && num_2 ==3 && random_number_pc<50) {
+        document.getElementById("card_2_copy3_pc").style.visibility="visible"
+        document.getElementById("card_2_copy3_pc").style.animation="card_move_pc 2s forwards"
+        document.getElementById("card_2_copy3_pc").style.margin=margin_value2 +"%"
+        document.getElementById("card_2_copy3_pc").style.zIndex = z_index
+        num_2_pc +=1
+        
+        
+
+        
+    }
+    else if (random_number2==2 && num_2 ==2 && random_number_pc<50) {
+        document.getElementById("card_2_copy2_pc").style.visibility="visible"
+        document.getElementById("card_2_copy2_pc").style.animation="card_move_pc 2s forwards"
+        document.getElementById("card_2_copy2_pc").style.margin=margin_value2 +"%"
+        document.getElementById("card_2_copy2_pc").style.zIndex = z_index
+        num_2_pc +=1
+        
+        
+
+    }
+    
+    else if (random_number2==2 && num_2 ==1 && random_number_pc<50) {
+        document.getElementById("card_2_copy_pc").style.visibility="visible"
+        document.getElementById("card_2_copy_pc").style.animation="card_move_pc 2s forwards"
+        document.getElementById("card_2_copy_pc").style.margin=margin_value2 +"%"
+        document.getElementById("card_2_copy_pc").style.zIndex = z_index
+        num_2_pc +=1
+        
+        
+
+    }
+    else if (random_number2==2 && random_number_pc<50) {
+        document.getElementById("card_2_pc").style.visibility="visible"
+        document.getElementById("card_2_pc").style.animation="card_move_pc 2s forwards"
+        document.getElementById("card_2_pc").style.margin=margin_value2 +"%"
+        document.getElementById("card_2_pc").style.zIndex = z_index
+        num_2_pc +=1
+    }
+
+    
+
+
+       
+
+
+}
+
+
+
+
+function num_3_logic_pc() 
+{
+    if (random_number2==3 && num_3_pc ==3 && random_number_pc<50) {
+        document.getElementById("card_3_copy3_pc").style.visibility="visible"
+        document.getElementById("card_3_copy3_pc").style.animation="card_move_pc 2s forwards"
+        document.getElementById("card_3_copy3_pc").style.margin=margin_value2 +"%"
+        document.getElementById("card_3_copy3_pc").style.zIndex = z_index
+        num_3_pc +=1
+       
+
+
+       
+    }
+    else if (random_number2==3 && num_3_pc ==2 && random_number_pc<50) {
+        document.getElementById("card_3_copy2_pc").style.visibility="visible"
+        document.getElementById("card_3_copy2_pc").style.animation="card_move_pc 2s forwards"
+        document.getElementById("card_3_copy2_pc").style.margin=margin_value2 +"%"
+        document.getElementById("card_3_copy2_pc").style.zIndex = z_index
+        num_3_pc +=1
+     
+
+       
+    }
+    else if (random_number2==3 && num_3_pc ==1 && random_number_pc<50) {
+        document.getElementById("card_3_copy_pc").style.visibility="visible"
+        document.getElementById("card_3_copy_pc").style.animation="card_move_pc 2s forwards"
+        document.getElementById("card_3_copy_pc").style.margin=margin_value2 +"%"
+        document.getElementById("card_3_copy_pc").style.zIndex = z_index
+        num_3_pc +=1
+        
+    }
+       
+    else if (random_number2==3 && random_number_pc<50) {
+        document.getElementById("card_3_pc").style.visibility="visible"
+        document.getElementById("card_3_pc").style.animation="card_move_pc 2s forwards"
+        document.getElementById("card_3_pc").style.margin=margin_value2 +"%"
+        document.getElementById("card_3_pc").style.zIndex = z_index
+        num_3_pc +=1
+        
+
+        
+    }
+    
+       
+}
+function num_4_logic_pc() 
+{
+    if (random_number2==4 && num_4_pc ==3 && random_number_pc<50) {
+        document.getElementById("card_4_copy3_pc").style.visibility="visible"
+        document.getElementById("card_4_copy3_pc").style.animation="card_move_pc 2s forwards"
+        document.getElementById("card_4_copy3_pc").style.margin=margin_value2 +"%"
+        document.getElementById("card_4_copy3_pc").style.zIndex = z_index
+        num_4_pc +=1
+       
+
+       
+    }
+    else if (random_number2==4 && num_4_pc ==2 && random_number_pc<50) {
+        document.getElementById("card_4_copy2_pc").style.visibility="visible"
+        document.getElementById("card_4_copy2_pc").style.animation="card_move_pc 2s forwards"
+        document.getElementById("card_4_copy2_pc").style.margin=margin_value2 +"%"
+        document.getElementById("card_4_copy2_pc").style.zIndex = z_index
+        num_4_pc +=1
+        
+
+       
+    }
+    else if (random_number2==4 && num_4_pc ==1&& random_number_pc<50) {
+        document.getElementById("card_4_copy_pc").style.visibility="visible"
+        document.getElementById("card_4_copy_pc").style.animation="card_move_pc 2s forwards"
+        document.getElementById("card_4_copy_pc").style.margin=margin_value2 +"%"
+        document.getElementById("card_4_copy_pc").style.zIndex = z_index
+        num_4_pc +=1
+        
+    }
+       
+    else if (random_number2==4 && random_number_pc<50) {
+        document.getElementById("card_4_pc").style.visibility="visible"
+        document.getElementById("card_4_pc").style.animation="card_move_pc 2s forwards"
+        document.getElementById("card_4_pc").style.margin=margin_value2 +"%"
+        document.getElementById("card_4_pc").style.zIndex = z_index
+        num_4_pc +=1
+        
+
+
+        
+    }
+    
+       
+}
+
+function num_5_logic_pc() 
+{
+    if (random_number2==5 && num_5_pc ==3 && random_number_pc<50) {
+        document.getElementById("card_5_copy3_pc").style.visibility="visible"
+        document.getElementById("card_5_copy3_pc").style.animation="card_move_pc 2s forwards"
+        document.getElementById("card_5_copy3_pc").style.margin=margin_value2 +"%"
+        document.getElementById("card_5_copy3_pc").style.zIndex = z_index
+        num_5_pc +=1
+       
+
+
+       
+    }
+    else if (random_number2==5 && num_5_pc ==2 && random_number_pc<50) {
+        document.getElementById("card_5_copy2_pc").style.visibility="visible"
+        document.getElementById("card_5_copy2_pc").style.animation="card_move_pc 2s forwards"
+        document.getElementById("card_5_copy2_pc").style.margin=margin_value2 +"%"
+        document.getElementById("card_5_copy2_pc").style.zIndex = z_index
+        num_5_pc +=1
+        
+
+
+       
+    }
+    else if (random_number2==5 && num_5_pc ==1 && random_number_pc<50) {
+        document.getElementById("card_5_copy_pc").style.visibility="visible"
+        document.getElementById("card_5_copy_pc").style.animation="card_move_pc 2s forwards"
+        document.getElementById("card_5_copy_pc").style.margin=margin_value2 +"%"
+        document.getElementById("card_5_copy_pc").style.zIndex = z_index
+        num_5_pc +=1
+        
+
+    }
+       
+    else if (random_number2==5 && random_number_pc<50) {
+        document.getElementById("card_5_pc").style.visibility="visible"
+        document.getElementById("card_5_pc").style.animation="card_move_pc 2s forwards"
+        document.getElementById("card_5_pc").style.margin=margin_value2 +"%"
+        document.getElementById("card_5_pc").style.zIndex = z_index
+        num_5_pc +=1
+        
+
+        
+    }
+    
+       
+}
+
+function num_6_logic_pc() 
+{
+    if (random_number2==6 && num_6_pc ==3 && random_number_pc<50) {
+        document.getElementById("card_6_copy3_pc").style.visibility="visible"
+        document.getElementById("card_6_copy3_pc").style.animation="card_move_pc 2s forwards"
+        document.getElementById("card_6_copy3_pc").style.margin=margin_value2 +"%"
+        document.getElementById("card_6_copy3_pc").style.zIndex = z_index
+        num_6_pc +=1
+        
+
+       
+    }
+    else if (random_number2==6 && num_6_pc ==2 && random_number_pc<50) {
+        document.getElementById("card_6_copy2_pc").style.visibility="visible"
+        document.getElementById("card_6_copy2_pc").style.animation="card_move_pc 2s forwards"
+        document.getElementById("card_6_copy2_pc").style.margin=margin_value2 +"%"
+        document.getElementById("card_6_copy2_pc").style.zIndex = z_index
+        num_6_pc +=1
+       
+
+       
+    }
+    else if (random_number2==6 && num_6_pc ==1 && random_number_pc<50) {
+        document.getElementById("card_6_copy_pc").style.visibility="visible"
+        document.getElementById("card_6_copy_pc").style.animation="card_move_pc 2s forwards"
+        document.getElementById("card_6_copy_pc").style.margin=margin_value2 +"%"
+        document.getElementById("card_6_copy_pc").style.zIndex = z_index
+        num_6_pc +=1
+       
+    }
+    
+    else if (random_number2==6 && random_number_pc<50) {
+        document.getElementById("card_6_pc").style.visibility="visible"
+        document.getElementById("card_6_pc").style.animation="card_move_pc 2s forwards"
+        document.getElementById("card_6_pc").style.margin=margin_value2 +"%"
+        document.getElementById("card_6_pc").style.zIndex = z_index
+        num_6_pc +=1
+      
+
+        
+    }
+    
+       
+}
+function num_7_logic_pc() 
+{
+    if (random_number2==7 && num_7_pc ==3 && random_number_pc<50) {
+        document.getElementById("card_7_copy3_pc").style.visibility="visible"
+        document.getElementById("card_7_copy3_pc").style.animation="card_move_pc 2s forwards"
+        document.getElementById("card_7_copy3_pc").style.margin=margin_value2 +"%"
+        document.getElementById("card_7_copy3_pc").style.zIndex = z_index
+        num_7_pc +=1
+        
+
+       
+    }
+    else if (random_number2==7 && num_7_pc ==2 && random_number_pc<50) {
+        document.getElementById("card_7_copy2_pc").style.visibility="visible"
+        document.getElementById("card_7_copy2_pc").style.animation="card_move_pc 2s forwards"
+        document.getElementById("card_7_copy2_pc").style.margin=margin_value2 +"%"
+        document.getElementById("card_7_copy2_pc").style.zIndex = z_index
+        num_7_pc +=1
+        
+
+
+       
+    }
+    else if (random_number2==7 && num_7_pc ==1 && random_number_pc<50) {
+        document.getElementById("card_7_copy_pc").style.visibility="visible"
+        document.getElementById("card_7_copy_pc").style.animation="card_move_pc 2s forwards"
+        document.getElementById("card_7_copy_pc").style.margin=margin_value2 +"%"
+        document.getElementById("card_7_copy_pc").style.zIndex = z_index
+        num_7_pc +=1
+        
+
+    }
+       
+    else if (random_number2==7 && random_number_pc<50) {
+        document.getElementById("card_7_pc").style.visibility="visible"
+        document.getElementById("card_7_pc").style.animation="card_move_pc 2s forwards"
+        document.getElementById("card_7_pc").style.margin=margin_value2 +"%"
+        document.getElementById("card_7_pc").style.zIndex = z_index
+        num_7_pc +=1
+       
+
+        
+    }
+    
+       
+}
+
+function num_8_logic_pc() 
+{
+    if (random_number2==8 && num_8_pc ==3 && random_number_pc<50) {
+        document.getElementById("card_8_copy3_pc").style.visibility="visible"
+        document.getElementById("card_8_copy3_pc").style.animation="card_move_pc 2s forwards"
+        document.getElementById("card_8_copy3_pc").style.margin=margin_value2 +"%"
+        document.getElementById("card_8_copy3_pc").style.zIndex = z_index
+        num_8_pc +=1
+      
+
+       
+    }
+    else if (random_number2==8 && num_8_pc ==2 && random_number_pc<50) {
+        document.getElementById("card_8_copy2_pc").style.visibility="visible"
+        document.getElementById("card_8_copy2_pc").style.animation="card_move_pc 2s forwards"
+        document.getElementById("card_8_copy2_pc").style.margin=margin_value2 +"%"
+        document.getElementById("card_8_copy2_pc").style.zIndex = z_index
+        num_8_pc +=1
+       
+
+
+       
+    }
+    else if (random_number2==8 && num_8_pc ==1 && random_number_pc<50) {
+        document.getElementById("card_8_copy_pc").style.visibility="visible"
+        document.getElementById("card_8_copy_pc").style.animation="card_move_pc 2s forwards"
+        document.getElementById("card_8_copy_pc").style.margin=margin_value2 +"%"
+        document.getElementById("card_8_copy_pc").style.zIndex = z_index
+        num_8_pc +=1
+        
+    }
+       
+    else if (random_number2==8 && random_number_pc<50) {
+        document.getElementById("card_8_pc").style.visibility="visible"
+        document.getElementById("card_8_pc").style.animation="card_move_pc 2s forwards"
+        document.getElementById("card_8_pc").style.margin=margin_value2 +"%"
+        document.getElementById("card_8_pc").style.zIndex = z_index
+        num_8_pc +=1
+       
+
+        
+    }
+    
+     
+    
+}
+function num_9_logic_pc() 
+{
+    if (random_number2==9 && num_9_pc ==3 && random_number_pc<50) {
+        document.getElementById("card_9_copy3_pc").style.visibility="visible"
+        document.getElementById("card_9_copy3_pc").style.animation="card_move_pc 2s forwards"
+        document.getElementById("card_9_copy3_pc").style.margin=margin_value2 +"%"
+        document.getElementById("card_9_copy3_pc").style.zIndex = z_index
+        num_9_pc +=1
+       
+
+       
+    }
+    else if (random_number2==9 && num_9_pc ==2 && random_number_pc<50) {
+        document.getElementById("card_9_copy2_pc").style.visibility="visible"
+        document.getElementById("card_9_copy2_pc").style.animation="card_move_pc 2s forwards"
+        document.getElementById("card_9_copy2_pc").style.margin=margin_value2 +"%"
+        document.getElementById("card_9_copy2_pc").style.zIndex = z_index
+        num_9_pc +=1
+       
+
+       
+    }
+    else if (random_number2==9 && num_9_pc ==1 && random_number_pc<50) {
+        document.getElementById("card_9_copy_pc").style.visibility="visible"
+        document.getElementById("card_9_copy_pc").style.animation="card_move_pc 2s forwards"
+        document.getElementById("card_9_copy_pc").style.margin=margin_value2 +"%"
+        document.getElementById("card_9_copy_pc").style.zIndex = z_index
+        num_9_pc +=1
+       
+    }
+       
+    else if (random_number2==9 && random_number_pc<50) {
+        document.getElementById("card_9_pc").style.visibility="visible"
+        document.getElementById("card_9_pc").style.animation="card_move_pc 2s forwards"
+        document.getElementById("card_9_pc").style.margin=margin_value2 +"%"
+        document.getElementById("card_9_pc").style.zIndex = z_index
+        num_9_pc +=1
+       
+
+        
+    }
+    
+       
+}
+
+function num_10_logic_pc() 
+{
+    if (random_number2==10 && num_10_pc ==3 && random_number_pc<50) {
+        document.getElementById("card_10_copy3_pc").style.visibility="visible"
+        document.getElementById("card_10_copy3_pc").style.animation="card_move_pc 2s forwards"
+        document.getElementById("card_10_copy3_pc").style.margin=margin_value2 +"%"
+        document.getElementById("card_10_copy3_pc").style.zIndex = z_index
+        num_10_pc +=1
+       
+
+       
+    }
+    else if (random_number2==10 && num_10_pc ==2 && random_number_pc<50) {
+        document.getElementById("card_10_copy2_pc").style.visibility="visible"
+        document.getElementById("card_10_copy2_pc").style.animation="card_move_pc 2s forwards"
+        document.getElementById("card_10_copy2_pc").style.margin=margin_value2 +"%"
+        document.getElementById("card_10_copy2_pc").style.zIndex = z_index
+        num_10_pc +=1
+        
+
+       
+    }
+    else if (random_number2==10 && num_10_pc ==1 && random_number_pc<50) {
+        document.getElementById("card_10_copy_pc").style.visibility="visible"
+        document.getElementById("card_10_copy_pc").style.animation="card_move_pc 2s forwards"
+        document.getElementById("card_10_copy_pc").style.margin=margin_value2 +"%"
+        document.getElementById("card_10_copy_pc").style.zIndex = z_index
+        num_10_pc +=1
+        
+
+        }
+
+       
+    else if (random_number2==10 && random_number_pc<50) {
+        document.getElementById("card_10_pc").style.visibility="visible"
+        document.getElementById("card_10_pc").style.animation="card_move_pc 2s forwards"
+        document.getElementById("card_10_pc").style.margin=margin_value2 +"%"
+        document.getElementById("card_10_pc").style.zIndex = z_index
+        num_10_pc +=1
+        
+        
+    }
+    
+       
+}
+
+
 
 
 
