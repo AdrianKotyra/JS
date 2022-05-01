@@ -1,0 +1,32 @@
+<!DOCTYPE html> 
+
+<html lang="eng">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="js_learn.css">
+    
+
+</head>
+
+
+
+
+
+<body>
+    <div id="application">
+        <h1> People entered</h1>
+        <h2 id="count-el">0</h2>
+        <button id="increment_btn">INCREMENT</button>
+        
+        <button id="save_btn">SAVE</button>
+        <p id ="entries">Previous entries: </p>
+    </div>
+
+    <script src="js_learn.js">
+        
+    </script>
+</body>
+
+
+</html>
