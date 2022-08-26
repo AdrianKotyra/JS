@@ -1,0 +1,23 @@
+class human {
+  constructor() {
+  this.gender="male";
+  }
+}
+const person = new human()
+console.log(person)
+
+
+
+
+
+class big extends human {
+  constructor(){
+  super();
+  this.name="adrian";
+  this.gender="female";
+   }
+  
+}
+
+const marian = new big();
+console.log(marian)
