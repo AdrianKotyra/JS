@@ -1,0 +1,6 @@
+const numbers = [1,2,3,4,5]
+const numbersEach = numbers.map((onenumber) => {
+  return onenumber *2
+}
+)
+console.log(...numbersEach)
