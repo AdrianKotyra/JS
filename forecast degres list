@@ -1,0 +1,15 @@
+
+const foreCast = function (Array) {
+    list_temps = []
+    for (i=1; i< Array.length; i++) {
+        list_temps.push(Array[i-1] + "C degrees in " + i+" day")
+    
+    }
+    return(list_temps)
+
+
+}
+temp = [12, 22, 33, 44, 55]
+
+fore = foreCast(temp)
+console.log(fore)
