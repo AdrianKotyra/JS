@@ -1,0 +1,9 @@
+const maskCreditCard = function(number) {
+    // const str = number + ""
+    const str = String(number)
+    const lastDigits = str.slice(-4)
+    const convertedDigits = lastDigits.padStart(str.length, "#")
+    console.log(convertedDigits);
+
+}
+maskCreditCard(123456789)
