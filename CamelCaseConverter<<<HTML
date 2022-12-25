@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./stylecourse.css">
+
+</head>
+<body>
+    <textarea class="text_area_converter" placeholder="Insert underscore name to convert to camelCase: " name="" id="" cols="30" rows="10">
+
+
+    </textarea>
+
+    <button id="converter_button">Click to convert</button>
+
+    <div class="result_display"></div>
+
+
+
+
+
+    <script src="./arrow_func.js"></script>
+</body>
+</html>
