@@ -1,0 +1,27 @@
+const underScoreToCamelConvert = function() {
+
+    const textArea = document.querySelector(".text_area_converter").value
+    const name = String(textArea)
+    const displayCamel = document.querySelector(".result_display")
+
+    const lowerCase = name.toLowerCase()
+    const newName = lowerCase.split("_")[1]
+    newArray = lowerCase.split("_")
+    let newArrayCamel = []
+
+    for (word of newArray) {
+        newArrayCamel.push(word[0].toUpperCase() + word.slice(1))
+
+
+    }
+    const newArrayCamelModified = [newArrayCamel[0].toLowerCase(), ...newArrayCamel.slice(1)]
+    const trimmedList = newArrayCamelModified.join("")
+
+    // const camelCaseconvert = lowerCase.split("_")[0] + newName[0].toUpperCase() + newName.slice(1)
+
+    displayCamel.innerHTML = trimmedList
+
+}
+
+const switcher = document.querySelector("#converter_button")
+switcher.addEventListener("click", underScoreToCamelConvert)
